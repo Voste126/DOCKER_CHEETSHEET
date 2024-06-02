@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  distro:
+    image: alpine
+    restart: always
+    container_name: custom_alpine
+    entrypoint: tail -f /dev/null
+
+  database:
+    image: postgres:latest
+    restart: always
+    container_name: custom_postgres
+    ports:
+      - 5434:5432
+    
+  
